@@ -44,26 +44,22 @@ setuptools.setup(
     url="https://github.com/ecmwf-lab/climetlab-s2s-ai-challenge",
     packages=setuptools.find_packages(),
     include_package_data=True,
-    install_requires=["climetlab>=0.7.0"],
+    install_requires=["climetlab>=0.9.3"],
     extras_require=extras_require,
     zip_safe=True,
     entry_points={
         "climetlab.datasets": [
             "s2s-ai-challenge-observations = climetlab_s2s_ai_challenge.observations:RawObservations",
             # Domain style
-            "s2s-ai-challenge-hindcast-input = climetlab_s2s_ai_challenge.fields:hindcast_input",
-            "s2s-ai-challenge-forecast-input = climetlab_s2s_ai_challenge.fields:forecast_input",
-            "s2s-ai-challenge-hindcast-input-dev = climetlab_s2s_ai_challenge.fields:hindcast_input_dev",
-            "s2s-ai-challenge-forecast-input-dev = climetlab_s2s_ai_challenge.fields:forecast_input_dev",
+            "s2s-ai-challenge-hindcast-input = climetlab_s2s_ai_challenge.fields:TrainingInput",
+            "s2s-ai-challenge-forecast-input = climetlab_s2s_ai_challenge.fields:TestInput",
             "s2s-ai-challenge-hindcast-like-observations = climetlab_s2s_ai_challenge.observations:HindcastLikeObservations",
             "s2s-ai-challenge-forecast-like-observations = climetlab_s2s_ai_challenge.observations:ForecastLikeObservations",
             "s2s-ai-challenge-hindcast-benchmark = climetlab_s2s_ai_challenge.benchmark:HindcastBenchmark",
             "s2s-ai-challenge-forecast-benchmark = climetlab_s2s_ai_challenge.benchmark:ForecastBenchmark",
             # ML style
-            "s2s-ai-challenge-training-input = climetlab_s2s_ai_challenge.fields:training_input",
-            "s2s-ai-challenge-test-input = climetlab_s2s_ai_challenge.fields:test_input",
-            "s2s-ai-challenge-training-input-dev = climetlab_s2s_ai_challenge.fields:training_input_dev",
-            "s2s-ai-challenge-test-input-dev = climetlab_s2s_ai_challenge.fields:test_input_dev",
+            "s2s-ai-challenge-training-input = climetlab_s2s_ai_challenge.fields:TrainingInput",
+            "s2s-ai-challenge-test-input = climetlab_s2s_ai_challenge.fields:TestInput",
             "s2s-ai-challenge-training-output-reference = climetlab_s2s_ai_challenge.observations:TrainingOutputReference",  # noqa: E501
             "s2s-ai-challenge-training-output-benchmark = climetlab_s2s_ai_challenge.benchmark:TrainingOutputBenchmark",
             "s2s-ai-challenge-test-output-reference = climetlab_s2s_ai_challenge.observations:TestOutputReference",
